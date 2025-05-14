@@ -1,0 +1,13 @@
+name: Greet the bonhomme
+
+on:
+  issues:
+    types: [opened, edited, closed]  
+
+jobs:
+  my_job:
+    name: Print the greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Action
+        run: echo 'Salut bb!'
