@@ -12,16 +12,6 @@ jobs:
     steps:
       - name: Echo Action
         run: echo 'Salut ${{github.event.issue.user.login}}!'
-  comment:
-    if: ${{ github.event.action == 'opened' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Comment on the issue
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            👋 Bonjour @${{ github.event.issue.user.login }} ! Merci pour votre contribution. Nous allons regarder ça.
   goodbye:
     if: ${{ github.event.action == 'closed' }}
     name: Print the goodbye
