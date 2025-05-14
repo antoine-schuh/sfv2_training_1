@@ -2,7 +2,7 @@ name: Greet the bonhomme
 
 on:
   issues:
-    types: [opened, edited, closed]  
+    types: [opened, closed]  
 
 jobs:
   greetings:
