@@ -5,9 +5,17 @@ on:
     types: [opened, edited, closed]  
 
 jobs:
-  my_job:
+  greetings:
+    if: ${{ github.event.action == 'opened' }}
     name: Print the greeting
     runs-on: ubuntu-latest
     steps:
       - name: Echo Action
         run: echo 'Salut bb!'
+  goodbye:
+    if: ${{ github.event.action == 'closed' }}
+    name: Print the goodbye
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Action
+        run: echo 'Au revoir bb!'
